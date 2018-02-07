@@ -1,0 +1,19 @@
+
+
+<div id="BackImg">
+    <canvas id="backCanvas" width = "0" height = "0"></canvas>
+</div>
+<div *ngIf="isShowBack">
+  <div class="backImg">
+    <div class="container">
+      <div class="content-box">
+          <input class="addFile" type="file" (change)="addBackImg($event,renderImg)">
+          <img src="./assets/ico-img/plus.png" alt="">
+      </div>
+      <div class="content-box" *ngFor="let img of renderImg" (click)="changeBack($event,img.path)">
+        <img [attr.src]="img.path" [attr.alt]="img.name">
+        <span>{{img.name}}</span>
+      </div>
+    </div>
+  </div>
+</div>

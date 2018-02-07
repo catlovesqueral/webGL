@@ -1,0 +1,89 @@
+
+<!-- <load-module></load-module> -->
+
+<div id="topbtn">
+    <ol>
+        <li>
+            <ol class="r-screen" (click)="hiddenShowBack($event)">
+                <li class="coverbtn">
+                    <div title="打开/关闭"><i class="back"></i></div>
+                </li>
+            </ol>
+            <ol class="r-camera" (click)="saveImgLocal()" *ngIf="isPC">
+                <li class="">
+                    <div title="截图"><i class="cut"></i></div>
+                </li>
+            </ol>
+        </li>
+    </ol>
+</div>
+<!-- 底部图标按钮 -->
+<div id="rightbtn">
+        <ol>
+            <li id="rightTop">
+                <ul class="r-top" (click) = "showModelPage($event)">
+                    <li class="btn coverbtn" data-index="0">
+                        <div class="buttonBtn" title="模型信息"><i class="picture" style="transform: rotate(8deg);"></i></div>
+                    </li>
+                </ul>
+                <ul class="r-top" (click) = "modelMove($event)">
+                    <li class="coverbtn">
+                        <div class="buttonBtn" title="模型移动"><i class="walk-around"></i></div>
+                    </li>
+                </ul>
+                <ul class="r-top" (click)="backPosition($event)">
+                    <li class="">
+                        <div  title="模型复位"><i class="vr"></i></div>
+                    </li>
+                </ul>
+                <ul class="r-top" (click) = "showBackPage($event)">
+                    <li class="coverbtn">
+                        <div class="buttonBtn" title="背景图片"><i class="gravity"></i></div>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <ol class="r-bottom">
+                    <li class="plus-btn">
+                        <div title="打开/关闭"><i class="plus"></i></div>
+                    </li>
+                </ol>
+            </li>
+        </ol>
+    </div>
+    <!-- 模型风格 -->
+    <div *ngIf="isShowStyle" class="modelStyle">
+        <img src="./assets/ico-img/五白科技LOGO.png" alt="">
+        {{modelInfo.style}}
+    </div>
+<!-- 模型信息和其他模型页面 -->
+    <div class="modelInfo" *ngIf="isShowModel">
+        <div class="info">
+            <img [attr.src]="modelInfo.thumbnail" alt="图片加载失败">
+            <div class="name">{{modelInfo.name}}<br/>{{modelInfo.size}}</div>
+            <p>{{modelInfo.script}}</p>
+            <div class="color">
+                <span>颜色选择:</span>
+                <div *ngFor="let color of colorSelect" (click)="changeColor(color)">
+                    <img [attr.src]="color.color" alt="">
+                    <span>{{color.name}}</span>
+                </div>
+            </div>
+        </div>
+        <div class="QRcode">
+            <img src="./assets/ico-img/erweima.jpg" alt="">
+        </div>
+        <div class="model">
+            <div class="title">更多款式</div>
+            <div class="likeModel" *ngFor="let model of renderList" (click)="newModel(model.id)">
+                <img [attr.src]="model.thumbnail" alt="图片加载失败">
+                <span>{{model.name}}</span>
+            </div>
+        </div>
+    </div>
+    <!-- 背景显示 -->
+    
+    <back-module class="backGroud" [isShowBack]="isShowBack"></back-module>
+  
+    
+    

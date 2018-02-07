@@ -1,0 +1,13 @@
+<div class="loading">
+        <canvas id="loadCanvas" width="60" height="60"></canvas>
+    <div *ngIf="isPC == false" class="canvas">
+        
+        <img src="./assets/ico-img/feiye.jpg" alt="加载失败">
+    </div>
+        <!-- <span>{{load}}%</span> -->
+    <div *ngIf="isPC == true" class="content">
+        <img src="./assets/ico-img/loadLogo.png" alt="加载失败">
+        <span>{{load}}%</span>
+    </div>
+    
+</div>

@@ -1,0 +1,41 @@
+.loading{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(103, 178, 206, 0.9);
+    z-index: 100;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.loading img {
+    width: 100%;
+    height: 100%;
+}
+.loading canvas {
+    /* display: block; */
+    position: absolute;
+    left: calc(50% - 30px);
+    bottom:120px;
+    text-align: center
+}
+.canvas{
+    width: 100%;
+    height: 100%;
+}
+.content img {
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    top: 100px;
+    left: calc(50% - 75px);
+}
+.content span {
+    color: white;
+    font-size: 28px;
+    font-family: "微软雅黑";
+    position: absolute;
+    left: 0;
+    right: 0;
+    text-align: center;
+    top:56%
+}
